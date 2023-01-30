@@ -13,10 +13,9 @@ flsFunctions.isWebp();
 
 import gsap from "gsap";
 
-import Swiper, { Autoplay, FreeMode, Navigation, Pagination } from "swiper";
+import Swiper, { Autoplay, FreeMode, Navigation, Pagination, Thumbs } from "swiper";
 
 import animation from "./animation.js";
-
 // import preloader from "./preloader.js";
 
 // preloader();
@@ -274,6 +273,42 @@ var swiper = new Swiper(".gallery__swiper", {
   // Responsive breakpoints
 });
 
+// project-popup sliders 
+
+function initSliders() {
+  if (document.querySelector('.bottom-info-popup__slider') && document.querySelector('.pagination-bottom-info-popup__slider')) {
+    new Swiper('.bottom-info-popup__slider', {
+      modules: [Thumbs],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 15,
+      autoHeight: true,
+      speed: 800,
+
+      thumbs: {
+        swiper: {
+          el: '.pagination-bottom-info-popup__slider',
+
+          // observer: true,
+          // observeParents: true,
+          slidesPerView: 3,
+          // autoHeight: true,
+          speed: 800,
+          breakpoints: {
+            320: {
+              direction: "horizonal",
+            },
+            767.98: {
+              direction: "vertical",
+            }
+          }
+        }
+      },
+    })
+  }
+}
+initSliders()
 // stage+
 
 const txtS = new SplitText(".gallery__swiper-title", { type: "chars" });
@@ -387,3 +422,7 @@ gallertAnimate.fromTo(
 );
 
 animation();
+
+
+//========================================================================================================================================================
+

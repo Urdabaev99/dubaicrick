@@ -2,13 +2,15 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 /* Убираем внутренние отступы */
 ul[class],
 ol[class] {
-  padding: 0;
+	padding: 0;
 }
 
 /* Убираем внешние отступы */
@@ -22,19 +24,19 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 0;
+	margin: 0;
 }
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
+	min-height: 100vh;
+	scroll-behavior: smooth;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul[class],
 ol[class] {
-  list-style: none;
+	list-style: none;
 }
 
 /* Наследуем шрифты для инпутов и кнопок */
@@ -42,5 +44,29 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
+}
+
+button {
+	cursor: pointer;
+	color: inherit;
+	background-color: inherit;
+	border: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+[class*='-ibg'] {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
 }
